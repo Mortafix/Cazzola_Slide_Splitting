@@ -4,7 +4,7 @@ import fitz
 from fpdf import FPDF
 
 # 20px box sampling for white page
-def is_white(a,image):
+def is_white(image):
 	h,w = image.shape[:2]
 	boxh,boxw = h//2,w//2
 	for i in range(boxh-10,boxh+10):
@@ -45,7 +45,7 @@ for i in range(doc.pageCount):
 
 	# image save
 	for j,s in enumerate([s1,s2,s3,s4]):
-		if not is_white(i*4+j+1,s):
+		if not is_white(s):
 			name = f'slide-{i*4+j+1}.png'
 			cv2.imwrite(os.path.join(path,name),s)
 			pdf.add_page()
