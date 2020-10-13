@@ -20,7 +20,7 @@ arg = sys.argv[1]
 dpi = int(sys.argv[2]) if len(sys.argv) > 2 else 300
 filename = os.path.basename(arg)
 path = os.path.dirname(arg)
-print(f'Converting \'{filename}\' with {dpi} dpi...')
+print(f'Splitting \'{filename}\' with {dpi} dpi...')
 
 # pdf read
 doc = fitz.open(os.path.join(path,filename))
