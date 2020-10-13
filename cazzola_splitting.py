@@ -27,6 +27,9 @@ doc = fitz.open(os.path.join(path,filename))
 pdf = None
 tmpfile = 'convert-tmp.png'
 
+# loading bar
+print('[{}] {:.0f}%'.format(''.join([('_','#')[(0)/doc.pageCount > x/20] for x in range(20)]),(0)/doc.pageCount*100),end='\r')
+
 for i in range(doc.pageCount):
 	page = doc.loadPage(i).getPixmap(matrix=fitz.Matrix(dpi/72,dpi/72)).writePNG(os.path.join(path,tmpfile))
 
@@ -52,8 +55,11 @@ for i in range(doc.pageCount):
 			pdf.image(os.path.join(path,name),0,0)
 			os.remove(os.path.join(path,name))
 
+	# loading bar
+	print('[{}] {:.0f}%'.format(''.join([('_','#')[(i+1)/doc.pageCount >= x/20] for x in range(20)]),(i+1)/doc.pageCount*100),end='\r')
+
 os.remove(os.path.join(path,tmpfile))
 
 # pdf save
 pdf.output(os.path.join(path,f'{os.path.splitext(filename)[0]}_splitted.pdf'), 'F')
-print('DONE!')
+print('\nDONE!')
