@@ -2,7 +2,7 @@
 Simple script to split Cazzola slides (slides not included).
 
 ## Installation
-![](images/CSS_Install_Run.gif)
+![](images/CSS_Install_Run.mp4)
 ```bash
 python -m venv test
 source test/bin/activate
