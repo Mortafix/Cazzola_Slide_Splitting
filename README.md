@@ -1,7 +1,7 @@
 # Cazzola Slide Splitting (CSS)
 Simple script to split Cazzola slides (slides not included).
 
-## Requirements
+## Installation
 ![](images/CSS_Install_Run.gif)
 ```bash
 python -m venv test
