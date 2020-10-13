@@ -2,7 +2,10 @@
 Simple script to split Cazzola slides (slides not included).
 
 ## Requirements
+![](images/CSS_Install_Run.gif)
 ```bash
+python -m venv test
+source test/bin/activate
 pip install -r requirements.txt
 ```
 
